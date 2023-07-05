@@ -42,12 +42,12 @@ def transform_load_data(task_instance):
                         }
     transformed_data_list = [transformed_data]
     df_data = pd.DataFrame(transformed_data_list)
-    aws_credentials = {"key": "ASIAQ5FWROF5AXZ3572M", "secret": "feSxRvQEQr201vadt1rPIBMqWjqDsAY+BkDpQQZg", "token": "FwoGZXIvYXdzEKv//////////wEaDNAP0+LegTRkfIj+cCKCAYOSjSyFwusUqViveeYWrfe8cWsqH4CK8/E1Wu6Te1ArG2wV6jyTNxzIz+3vTQeX1T3JEW2LXg8sgbzLVy/KBWME/WO46Jy3d8YXxOfin2qze3SNmXSAkYpCrx/o4sWyzL9jUxXkIaM1C6xW66LsJPm6plWW2YFKH/hYF8MEOsix/Tco2MKPpQYyKPZDhPxWIEsDGi7VYf+KWF5J1MvJoCpxYSxR9r31cI9Ay2RFdGt1bvw="}
+    aws_credentials = {"key": "************", "secret": "*********", "token": "************"}
 
     now = datetime.now()
     dt_string = now.strftime("%d%m%Y%H%M%S")
     dt_string = 'current_weather_data_Pune_' + dt_string
-    df_data.to_csv(f"s3://onktestbucket/{dt_string}.csv", index=False,storage_options = aws_credentials)
+    df_data.to_csv(f"s3://bucket_name/{dt_string}.csv", index=False,storage_options = aws_credentials)
 
 
 default_args = {
