@@ -69,13 +69,13 @@ with DAG('DAG_Weather_tut',
     is_weather_api_ready = HttpSensor(
     task_id ='is_weather_api_ready',
     http_conn_id='weathermap_api_pune',
-    endpoint='/data/2.5/weather?q=Pune&APPID=935fd8c5bbc225866e209151a4ab1497'
+    endpoint='/data/2.5/weather?q=Pune&APPID=***************'
     )
 
     extract_weather_data = SimpleHttpOperator(
     task_id = 'extract_weather_data',
     http_conn_id = 'weathermap_api_pune',
-    endpoint='/data/2.5/weather?q=Pune&APPID=935fd8c5bbc225866e209151a4ab1497',
+    endpoint='/data/2.5/weather?q=Pune&APPID=****************',
     method = 'GET',
     response_filter= lambda r: json.loads(r.text),
     log_response=True
